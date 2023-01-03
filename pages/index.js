@@ -6,7 +6,11 @@ import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
+import { getFeaturedEvents } from "../dummy-data";
+import EventList from "../components/events/event-list";
+
 export default function Home() {
+  const FeaturedEvents = getFeaturedEvents();
   return (
     <>
       <Head>
@@ -15,9 +19,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
-        <h1>The Event Home page</h1>
-      </div>
+      <EventList itmes={FeaturedEvents} />
     </>
   );
 }
